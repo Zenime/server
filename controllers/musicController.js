@@ -2,7 +2,6 @@ const axios = require('axios')
 
 class MusicController {
     static searchSong(req, res) {
-        console.log(req.params.q)
         axios({
             method:'get',
             url:`https://deezerdevs-deezer.p.mashape.com/search?q=${req.query.q}`,
