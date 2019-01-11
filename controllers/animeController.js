@@ -1,17 +1,17 @@
 const axios = require('axios')
 
 module.exports = {
-  getTopAnime: function(req,res){
-    axios({
-      url: "https://api.jikan.moe/v3/top/anime/1/upcoming"
-    })
-    .then( animes => {
-      res.status(200).json(animes.data.top)
-    })
-    .catch( error => {
-      res.status(500).json({error, message: "internal server error"})
-    })
-  },
+  // getTopAnime: function(req,res){
+  //   axios({
+  //     url: "https://api.jikan.moe/v3/top/anime/1/upcoming"
+  //   })
+  //   .then( animes => {
+  //     res.status(200).json(animes.data.top)
+  //   })
+  //   .catch( error => {
+  //     res.status(500).json({error, message: "internal server error"})
+  //   })
+  // },
 
   getSeason: function(req,res){
     axios({
