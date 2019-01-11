@@ -44,6 +44,7 @@ module.exports = {
       url: `https://api.jikan.moe/v3/season/${year}/${season}`
     })
     .then( animes => {
+      console.log('masukk controller')
       res.status(200).json(animes.data.anime)
     })
     .catch( error => {
