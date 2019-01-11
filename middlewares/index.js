@@ -5,6 +5,7 @@ const User = require('../models/User')
 
 module.exports = {
     verifyGoogle: function(req, res, next) {
+        console.log(req.body.gToken)
         client.verifyIdToken({
             idToken: req.body.gToken,
             audience: CLIENT_ID

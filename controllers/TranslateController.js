@@ -1,5 +1,5 @@
 const { Translate } = require('@google-cloud/translate');
-const projectId = "zenime-1547119867435";
+const projectId = process.env.PROJECT_ID;
  
 const translate = new Translate({
   projectId: projectId,
