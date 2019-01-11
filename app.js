@@ -12,6 +12,7 @@ var musicRouter = require('./routes/music');
 var animeRouter = require('./routes/anime');
 var translateRouter = require('./routes/translate');
 
+var voicerRouter = require('./routes/speech')
 var app = express();
 
 const mongoose = require('mongoose');
@@ -40,6 +41,7 @@ app.use('/music', musicRouter);
 app.use('/anime', animeRouter)
 app.use('/translate', translateRouter);
 
+app.use('/speech', voicerRouter)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
