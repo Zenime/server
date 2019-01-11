@@ -25,6 +25,18 @@ module.exports = {
     })
   },
 
+  getDetails: function(req,res){
+    axios({
+      url: `https://api.jikan.moe/v3/anime/${req.params.mal_id}`
+    })
+    .then( anime => {
+      res.status(200).json(anime.data)
+    })
+    .catch( error => {
+      res.status(500).json({error, message: "internal server error"})
+    })
+  },
+
   searchBySeason: function(req,res){
     console.log(req.params)
     let {year, season} = req.params
@@ -32,7 +44,7 @@ module.exports = {
       url: `https://api.jikan.moe/v3/season/${year}/${season}`
     })
     .then( animes => {
-      res.status(200).json(animes.data)
+      res.status(200).json(animes.data.anime)
     })
     .catch( error => {
       res.status(500).json({error, message: "internal server error"})
