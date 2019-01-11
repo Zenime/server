@@ -10,6 +10,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var musicRouter = require('./routes/music');
 var animeRouter = require('./routes/anime');
+var translateRouter = require('./routes/translate');
+
 var app = express();
 
 const mongoose = require('mongoose');
@@ -36,6 +38,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/music', musicRouter);
 app.use('/anime', animeRouter)
+app.use('/translate', translateRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
