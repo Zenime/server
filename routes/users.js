@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
+const UserController = require('../controllers/UserController')
+const { verifyGoogle } = require('../middlewares')
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+/*google login*/
+router.post('/', verifyGoogle, UserController.googleLogin)
 
 module.exports = router;
